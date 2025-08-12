@@ -21,7 +21,7 @@ public class ExchangeApiImpl implements ExchangeApi {
 
     @Override
     public ExchangeRate getExchangeWithDni(Person person) {
-        logger.info("DNI Person: " + person);
+        logger.info("DNI Person consulting: {}" + person);
         return exchangeService.getExchangeWithDni(person.getDni());
     }
 }

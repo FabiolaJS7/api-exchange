@@ -4,13 +4,13 @@ import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
 import org.mf.bean.ExchangeRateExt;
-import org.mf.service.ExchangeServiceImplProxy;
+import org.mf.service.ExchangeServiceProxyImpl;
 
 @QuarkusTest
 public class ExchangeServiceProxyImplTest {
 
     @Inject
-    ExchangeServiceImplProxy exchangeServiceProxyImpl;
+    ExchangeServiceProxyImpl exchangeServiceProxyImpl;
 
     @Test
     void shouldConsultExternalService_getExchangeRate() {

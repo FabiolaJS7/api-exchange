@@ -9,6 +9,7 @@ import org.mf.bean.ExchangeRateExt;
 @Path("/today.json")
 public interface ExchangeApiClient {
 
+    //Método que devuelve el tipo de cambio del servicio externo.
     @GET
     ExchangeRateExt getTodayExchangeRate();
 

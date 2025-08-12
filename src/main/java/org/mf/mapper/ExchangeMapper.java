@@ -21,9 +21,10 @@ public interface ExchangeMapper {
     @Mapping(source = "venta", target = "sell")
     ExchangeRate getExchangeRateByExt(ExchangeRateExt exchangeRateExt);
 
+    //Convierte un String en LocalDate
     @Named("stringToLocalDate")
     default LocalDate stringToLocalDate(String date) {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd"); // Ajusta el patrón según el formato de fecha
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         return LocalDate.parse(date, formatter);
     }
 }

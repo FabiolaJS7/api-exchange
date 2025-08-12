@@ -3,6 +3,7 @@ package org.mf.service;
 import jakarta.enterprise.context.ApplicationScoped;
 
 import jakarta.inject.Inject;
+import lombok.NoArgsConstructor;
 import org.eclipse.microprofile.rest.client.inject.RestClient;
 import org.jboss.logging.Logger;
 import org.mf.bean.ExchangeRateExt;
@@ -26,7 +27,7 @@ public class ExchangeServiceProxyImpl implements ExchangeServiceProxy {
             return exchangeApiClient.getTodayExchangeRate();
         } catch (Exception e) {
             logger.error("Error fetching exchange rate: " + e.getMessage(), e);
-            return new ExchangeRateExt();
+            return null;
         }
 
     }

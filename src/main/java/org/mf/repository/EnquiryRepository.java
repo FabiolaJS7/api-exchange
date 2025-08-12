@@ -6,10 +6,9 @@ import org.mf.entity.Enquiry;
 
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 @ApplicationScoped
-public class ExchangeRepository implements PanacheRepository<Enquiry> {
+public class EnquiryRepository implements PanacheRepository<Enquiry> {
 
     //Busca todos los registros que existen en la bd para de las consultas que ha realizado el dni
     public int findByDniAndDate(String dni, Date consultDate){

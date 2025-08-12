@@ -25,7 +25,7 @@ public class ExchangeServiceImpl implements ExchangeService{
     @Transactional
     public ExchangeRate getExchangeWithDni(String dni) {
         ExchangeRateExt exchangeRateExt = exchangeServiceProxy.getExchangeRate();
-        int countEnquiryByDni = exchangeRepository.findByDni(dni);
+        int countEnquiryByDni = exchangeRepository.findByDniAndDate(dni, new Date());
 
         logger.info("exchangeRateExt.getSunat() " + exchangeRateExt.getSunat());
         logger.info("countEnquiryByDni " + countEnquiryByDni);

@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "371c633e-225f-43bc-870e-97e7cc8fb5a9",
+		"name": "Quarkus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10981861"
+	},
+	"item": [
+		{
+			"name": "(exchange) http://localhost:8081/exchange/45895881",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/exchange/45895881",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"exchange",
+						"45895881"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

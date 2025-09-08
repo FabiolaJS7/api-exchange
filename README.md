@@ -64,3 +64,23 @@ If you want to learn more about building native executables, please consult <htt
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+### Busqueda con Azure OpenAi
+url: http://localhost:8081/api/transactions?word=gas
+
+### agregar datos en una bd:
+
+
+```shell script
+--INSERT INTO transaction (amount, companyName, description) VALUES
+(1500.75, 'Ripley', 'Compra realizada por Banco de Crédito del Perú'),
+(3200.00, 'Saga Falabella', 'Compra realizada por Interbank'),
+(2750.50, 'Oeschle', 'Compra realizada por Scotiabank Perú'),
+(4300.00, 'Repsol', 'Compra realizada por Banco Continental'),
+(1800.25, 'Ripley', 'Compra realizada por BBVA Perú'),
+(2200.00, 'Saga Falabella', 'Compra realizada por Banco Pichincha'),
+(1950.00, 'Oeschle', 'Compra realizada por Banco de la Nación'),
+(3100.75, 'Repsol', 'Compra realizada por MiBanco'),
+(2600.00, 'Ripley', 'Compra realizada por Banco Falabella'),
+(4000.00, 'Saga Falabella', 'Compra realizada por Banco Ripley');
+```

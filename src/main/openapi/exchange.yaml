@@ -39,6 +39,75 @@ paths:
           description: Maxim limit enquiry at day is 10
         default:
           description: Unexpected error
+  /transactions:
+    get:
+      tags:
+        - transaction
+      summary: Getting transactions
+      description: Getting transactions
+      operationId: getTransactions
+      responses:
+        '200':
+          description: succesful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+    post:
+      tags:
+        - transaction
+      summary: Create a transaction
+      description: Create a transaction
+      operationId: createTransaction
+      requestBody:
+        description: Create a new transaction
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Transaction'
+      responses:
+        '200':
+          description: succesful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Transaction'
+  /api/transactions:
+    get:
+      tags:
+        - transactions
+      summary: Search transactions por coincidencia semántica
+      description: Busca transacciones relacionadas con una empresa inferida mediante Azure OpenAI.
+      parameters:
+        - name: word
+          in: query
+          required: true
+          description: Palabra para realizar la inferencia semántica
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Lista de transacciones relacionadas con la empresa inferida.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Transaction'
+        '400':
+          description: Parámetro de consulta 'word' es requerido
+          content:
+            text/plain:
+              schema:
+                type: string
+        '404':
+          description: No se encontró coincidencia semántica o transacciones relacionadas.
+          content:
+            text/plain:
+              schema:
+                type: string
 
 components:
   schemas:
@@ -68,6 +137,22 @@ components:
         dni:
           type: string
           example: 45895877
+    Transaction:
+      type: object
+      properties:
+        id:
+          type: string
+          example: '654654654'
+        companyName:
+          type: string
+          example: 'Repsol'
+        description:
+          type: string
+          example: "Pago al grifo Repsol"
+        amount:
+          type: number
+          format: double
+          example: 50.00
   requestBodies:
     Person:
       description: Pet object that needs to be added to the store
